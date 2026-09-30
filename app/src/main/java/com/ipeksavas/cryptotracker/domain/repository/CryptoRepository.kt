@@ -6,6 +6,7 @@ import com.ipeksavas.cryptotracker.domain.util.Result
 
 import kotlinx.coroutines.flow.Flow
 
+//KURAL - PATRON
 interface CryptoRepository {
     fun getCoins(): Flow<Result<List<CryptoCoin>, NetworkError>>
     /*
