@@ -1,0 +1,18 @@
+*.iml
+.gradle
+/local.properties
+local.properties
+.DS_Store
+
+# Android Studio & IntelliJ çöpleri (Hepsini tek kalemde yok sayar):
+.idea/
+
+# Derleme çıktıları (Hem ana klasör hem app altındakiler için):
+build/
+/build
+/app/build
+
+# Diğer Android Studio kalıntıları:
+/captures
+.externalNativeBuild
+.cxx
