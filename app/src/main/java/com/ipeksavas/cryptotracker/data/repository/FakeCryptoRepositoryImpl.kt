@@ -27,9 +27,7 @@ class FakeCryptoRepositoryImpl: CryptoRepository{
                     emit(Result.Error(randomError))//hatayı fırlatıyorum.
                 }else{//başarılıysa verileri yolluyorum.
                     val fakeList = listOf(
-                        CryptoCoin("1","elmas",3.49,0.02),
-                        CryptoCoin("2","exer",2.76,0.39),
-                        CryptoCoin("3","egas",93.4,2.32)
+                        CryptoCoin("1","elmas","mavi",5,true,true,"xxx")
                     )
                     emit(Result.Success(fakeList))
                 }
