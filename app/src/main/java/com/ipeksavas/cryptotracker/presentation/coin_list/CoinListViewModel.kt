@@ -9,8 +9,12 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import com.ipeksavas.cryptotracker.domain.util.Result
+import dagger.hilt.android.lifecycle.HiltViewModel
+import jakarta.inject.Inject
+
+@HiltViewModel
 class CoinListViewModel(
-    private val repository: CryptoRepository//Dependency Injection yaptık.
+    @Inject private val repository: CryptoRepository//Dependency Injection yaptık.
 ): ViewModel(){
 
     //stateflow değil de state of olsa by kullanır .value yazmamıza gerek kalmazdı.
