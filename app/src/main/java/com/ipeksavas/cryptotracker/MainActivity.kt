@@ -8,7 +8,9 @@ import com.ipeksavas.cryptotracker.presentation.coin_list.CoinListViewModel
 import com.ipeksavas.cryptotracker.ui.theme.CryptoTrackerTheme
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ipeksavas.cryptotracker.presentation.coin_list.CoinListScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint//hilt'in müdahalesine izin veriyoruz.
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
