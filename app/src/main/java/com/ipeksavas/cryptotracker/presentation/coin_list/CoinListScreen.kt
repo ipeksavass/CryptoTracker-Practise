@@ -38,8 +38,6 @@ fun CoinListScreen( viewModel: CoinListViewModel){
                 items(currentState.success) { coin ->
                     Text(text = coin.id)
                     Text(text = coin.name)
-                    Text(text = coin.price.toString())
-                    Text(text = coin.changeRate.toString())
                     Text(text = "--------------------")
                 }
             }
