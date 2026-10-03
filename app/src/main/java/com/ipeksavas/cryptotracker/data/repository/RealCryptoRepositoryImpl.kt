@@ -6,12 +6,13 @@ import com.ipeksavas.cryptotracker.domain.model.CryptoCoin
 import com.ipeksavas.cryptotracker.domain.repository.CryptoRepository
 import com.ipeksavas.cryptotracker.domain.util.NetworkError
 import com.ipeksavas.cryptotracker.domain.util.Result
+import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
 
-class RealCryptoRepositoryImpl(
+class RealCryptoRepositoryImpl @Inject constructor(
     private val api: CoinApi
 ): CryptoRepository {
     override fun getCoins(): Flow<Result<List<CryptoCoin>, NetworkError>> {

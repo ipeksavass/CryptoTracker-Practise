@@ -13,8 +13,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 
 @HiltViewModel
-class CoinListViewModel(
-    @Inject private val repository: CryptoRepository//Dependency Injection yaptık.
+class CoinListViewModel @Inject constructor(
+     private val repository: CryptoRepository//Dependency Injection yaptık.
 ): ViewModel(){
 
     //stateflow değil de state of olsa by kullanır .value yazmamıza gerek kalmazdı.
