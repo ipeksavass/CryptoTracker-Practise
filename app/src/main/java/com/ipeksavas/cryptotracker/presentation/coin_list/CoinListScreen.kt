@@ -36,9 +36,7 @@ fun CoinListScreen( viewModel: CoinListViewModel){
                 modifier = Modifier.fillMaxSize()
             ) {
                 items(currentState.success) { coin ->
-                    Text(text = coin.id)
-                    Text(text = coin.name)
-                    Text(text = "--------------------")
+                    CoinListItem(coin = coin)
                 }
             }
         }
