@@ -24,7 +24,7 @@ fun CoinDto.toCryptoCoin(): CryptoCoin{
         name = this.name,
         symbol = this.symbol,
         price = quote?.price ?: 0.0,
-        percent_change_24h = quote?.percentChange24h ?: 0.0
+        percentChange24h = quote?.percentChange24h ?: 0.0
     )
 }
 

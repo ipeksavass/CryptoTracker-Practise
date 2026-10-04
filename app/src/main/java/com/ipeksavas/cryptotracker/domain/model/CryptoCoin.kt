@@ -5,5 +5,5 @@ data class CryptoCoin(
     val name: String,
     val symbol: String,
     val price: Double,
-    val percent_change_24h: Double
+    val percentChange24h: Double
 )
