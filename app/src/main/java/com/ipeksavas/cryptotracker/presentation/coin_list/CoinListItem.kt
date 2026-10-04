@@ -33,7 +33,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,6 +41,10 @@ import com.ipeksavas.cryptotracker.domain.model.CryptoCoin
 @Composable
 fun CoinListItem(coin: CryptoCoin){
     var isExpanded by remember{ mutableStateOf(false)}
+    
+    val formattedPrice = "%.5f".format(coin.price)
+    val formattedPercentChange = "%.2f".format(coin.percentChange24h)
+    
     
     Card(
         modifier = Modifier
@@ -109,41 +112,11 @@ fun CoinListItem(coin: CryptoCoin){
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    DetailItem(label = "Rank", value = "#${coin.rank}")
+                    DetailItem(label = "Price", value = "\$${formattedPrice}")
                     DetailItem(label = "Symbol", value = coin.symbol.uppercase())
-                    DetailItem(label = "Type", value = coin.type)
+                    DetailItem(label = "Percent Change 24h", value = "${formattedPercentChange}%")
                 }
                 
-                Spacer(modifier = Modifier.height(8.dp))
-                
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    val isActiveColor = if (coin.isActive) Color(0xFF4CAF50) else Color(0xFFE91E63)
-                    Text(
-                        text = if (coin.isActive) "Aktif" else "Pasif",
-                        style = MaterialTheme.typography.bodyMedium,
-                        fontWeight = FontWeight.Bold,
-                        color = isActiveColor
-                    )
-                    if (coin.isNew) {
-                        Box(
-                            modifier = Modifier
-                                .clip(RoundedCornerShape(8.dp))
-                                .background(Color(0xFFFF9800))
-                                .padding(8.dp)
-                        ) {
-                            Text(
-                                text = "NEW COIN",
-                                color = Color.Blue,
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
-                    }
-                }
             }
         }
     }
